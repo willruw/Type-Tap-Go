@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout_edit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_profile_edit_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/str_background"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scroll_view_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/black"
+                android:minHeight="60dp">
+
+                <!-- The contrast warning appears to be a false positive.-->
+                <!-- We determined that the touch target size is appropriate after testing it on
+                an actual device (galaxy s21).-->
+                <!-- Speakable text not applicable.-->
+                <EditText
+                    android:id="@+id/edt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:background="@color/primary"
+                    android:hint="@string/str_name"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:maxLength="25"
+                    android:minHeight="60dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/darker_grey"
+                    tools:ignore="EditableContentDescCheck,TextContrastCheck" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_edit_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/black"
+                android:minHeight="60dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_layout_avatar_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="@color/primary"
+                    android:minHeight="60dp">
+
+                    <!-- The contrast warning appears to be a false positive.-->
+                    <TextView
+                        android:id="@+id/txt_choose_avatar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/str_avatar"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextContrastCheck" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_avatar1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_choose_avatar"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- The contrast warning appears to be a false positive.-->
+                        <!-- We determined that the touch target size is appropriate after testing
+                        it on an actual device (galaxy s21).-->
+                        <!-- Speakable text not applicable.-->
+                        <ImageView
+                            android:id="@+id/img_avatar_1"
+                            android:layout_width="47dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="3dp"
+                            android:background="@color/white"
+                            android:clickable="true"
+                            android:contentDescription="@string/str_user_avatar"
+                            android:focusable="true"
+                            app:srcCompat="@drawable/ic_avatar_1"
+                            tools:ignore="ImageContrastCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_avatar2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/card_avatar3"
+                        app:layout_constraintStart_toEndOf="@+id/card_avatar1"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- The contrast warning appears to be a false positive.-->
+                        <!-- We determined that the touch target size is appropriate after testing
+                        it on an actual device (galaxy s21).-->
+                        <ImageView
+                            android:id="@+id/img_avatar_2"
+                            android:layout_width="47dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="3dp"
+                            android:background="@color/white"
+                            android:clickable="true"
+                            android:contentDescription="@string/str_user_avatar"
+                            android:focusable="true"
+                            app:srcCompat="@drawable/ic_avatar_2"
+                            tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_avatar3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- The contrast warning appears to be a false positive.-->
+                        <!-- We determined that the touch target size is appropriate after testing
+                        it on an actual device (galaxy s21).-->
+                        <ImageView
+                            android:id="@+id/img_avatar_3"
+                            android:layout_width="47dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="3dp"
+                            android:background="@color/white"
+                            android:clickable="true"
+                            android:contentDescription="@string/str_user_avatar"
+                            android:focusable="true"
+                            app:srcCompat="@drawable/ic_avatar_3"
+                            tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_edit_bio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/black"
+                android:minHeight="60dp">
+
+                <!-- The contrast warning appears to be a false positive.-->
+                <!-- Content description "masks" hint and so it must be ignored.-->
+                <EditText
+                    android:id="@+id/edt_bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:background="@color/primary"
+                    android:hint="@string/str_bio"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:maxLength="25"
+                    android:minHeight="60dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="0dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/darker_grey"
+                    tools:ignore="EditableContentDescCheck,TextContrastCheck" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_edit_theme"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/black"
+                android:minHeight="60dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_layout_theme_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="@color/primary"
+                    android:minHeight="60dp">
+
+                    <!-- The contrast warning appears to be a false positive.-->
+                    <TextView
+                        android:id="@+id/txt_choose_theme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/str_theme"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextContrastCheck" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_theme1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_choose_theme"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- The contrast warning appears to be a false positive.-->
+                        <!-- We determined that the touch target size is appropriate after testing
+                        it on an actual device (galaxy s21).-->
+                        <ImageView
+                            android:id="@+id/img_theme_1"
+                            android:layout_width="47dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="3dp"
+                            android:clickable="true"
+                            android:contentDescription="@string/str_user_avatar"
+                            android:focusable="true"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/img_cloud1_bg"
+                            tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
+                            tools:srcCompat="@drawable/img_cloud1_bg" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_theme2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/card_theme3"
+                        app:layout_constraintStart_toEndOf="@+id/card_theme1"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- The contrast warning appears to be a false positive.-->
+                        <!-- We determined that the touch target size is appropriate after testing
+                         it on an actual device (galaxy s21).-->
+                        <ImageView
+                            android:id="@+id/img_theme_2"
+                            android:layout_width="47dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="3dp"
+                            android:clickable="true"
+                            android:contentDescription="@string/str_user_avatar"
+                            android:focusable="true"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/img_cloud2_bg"
+                            tools:ignore="ImageContrastCheck,TouchTargetSizeCheck"
+                            tools:srcCompat="@drawable/img_cloud2_bg" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_theme3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- The contrast warning appears to be a false positive.-->
+                        <!-- We determined that the touch target size is appropriate after testing
+                        it on an actual device (galaxy s21).-->
+                        <ImageView
+                            android:id="@+id/img_theme_3"
+                            android:layout_width="47dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="3dp"
+                            android:clickable="true"
+                            android:contentDescription="@string/str_user_avatar"
+                            android:focusable="true"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/img_cloud3_bg"
+                            tools:ignore="ImageContrastCheck,TouchTargetSizeCheck"
+                            tools:srcCompat="@drawable/img_cloud3_bg" />
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- The contrast warning appears to be a false positive.-->
+    <!-- Speakable text not applicable.-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/str_save_a_new_profile"
+        android:src="@drawable/ic_save"
+        app:backgroundTint="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <!-- The contrast warning appears to be a false positive.-->
+    <!-- Speakable text not applicable.-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_back_to_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/str_add_a_new_profile"
+        android:rotation="270"
+        android:src="@drawable/ic_back_button"
+        app:backgroundTint="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

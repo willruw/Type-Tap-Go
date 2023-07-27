@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout_leaders"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LeaderBoardFragment">
+
+    <ImageView
+        android:id="@+id/img_leaderboard_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/str_background"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- The contrast warning appears to be a false positive.-->
+    <!-- Speakable text not applicable.-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_back_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/str_add_a_new_profile"
+        android:rotation="270"
+        android:src="@drawable/ic_back_button"
+        app:backgroundTint="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/txt_leaderboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/str_leaderboard"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_name_column"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/str_name"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/txt_highscore_column"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_high_score"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/txt_count_column"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="@string/str_total_words"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_highscore_column"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_leaderboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </FrameLayout>
+
+    <!-- We determined that the touch target size is appropriate after testing
+    it on an actual device (galaxy s21).-->
+    <!-- We have decided not to use the Material switch component.-->
+    <Switch
+        android:id="@+id/global_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_global"
+        android:textColor="@color/white"
+        android:thumbTint="@color/primary"
+        app:layout_constraintBottom_toTopOf="@+id/txt_count_column"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toEndOf="@+id/txt_leaderboard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.841"
+        tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+</androidx.constraintlayout.widget.ConstraintLayout>

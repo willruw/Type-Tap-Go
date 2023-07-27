@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "664562942861",
+    "project_id": "type-tap-go",
+    "storage_bucket": "type-tap-go.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664562942861:android:016610cbd2728d15e7f3c4",
+        "android_client_info": {
+          "package_name": "cs240.group1.typetapgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664562942861-otovkfe26ui7ccbb0rouantgqrcvk5g0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiXntjR_OIoq0yEeQE8pszRl7H1YqHDDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664562942861-otovkfe26ui7ccbb0rouantgqrcvk5g0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

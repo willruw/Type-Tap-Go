@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/loading_background"
+    tools:context=".ui.LoadingFragment">
+
+    <!-- The contrast warning appears to be a false positive.-->
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="232dp"
+        android:layout_height="176dp"
+        android:background="#F1F2F3"
+        android:src="@drawable/img_loading"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/txt_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/str_loading"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/gifImageView"
+        app:layout_constraintEnd_toEndOf="@+id/gifImageView"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="@+id/gifImageView"
+        app:layout_constraintTop_toTopOf="@+id/gifImageView"
+        app:layout_constraintVertical_bias="0.575" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
